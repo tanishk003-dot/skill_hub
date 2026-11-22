@@ -1,0 +1,170 @@
+# ==============================================================================
+# L&K Skill Hub — Production Enterprise Docker Compose
+# Services: MySQL 8, FastAPI Backend, Angular Frontend, Judge0 Sandboxed Runner
+#
+# SECURITY & COMPLIANCE:
+# - No real passwords in git (configured via environment variables)
+# - MySQL port NOT published to the host (internal network only)
+# - Judge0 runner strictly isolated to internal network
+# - Healthchecks and unless-stopped restart policies configured for all services
+# - Named persistent volumes for zero data loss
+# ==============================================================================
+
+networks:
+  skillhub-internal:
+    driver: bridge
+
+services:
+  # 1. Primary Relational Database (MySQL 8.0)
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    command: --default-authentication-plugin=caching_sha2_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_secure_password_replace}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-skillhub_db}
+      MYSQL_USER: ${MYSQL_USER:-skillhub_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-skillhub_secure_password}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    expose:
+      - "3306" # Internal Docker network access ONLY - NO host port publishing
+    networks:
+      - skillhub-internal
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root --password=$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  # 2. FastAPI Backend Application
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+      - DATABASE_URL=mysql+pymysql://${MYSQL_USER:-skillhub_user}:${MYSQL_PASSWORD:-skillhub_secure_password}@mysql:3306/${MYSQL_DATABASE:-skillhub_db}?charset=utf8mb4
+      - SECRET_KEY=${SECRET_KEY:-REPLACE_WITH_STRONG_RANDOM_SECRET_KEY_MIN_32_CHARS}
+      - TOKEN_ENCRYPTION_KEY=${TOKEN_ENCRYPTION_KEY:-REPLACE_WITH_32_BYTE_BASE64_FERNET_KEY}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-30}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:4300,http://127.0.0.1:4300}
+      - JUDGE0_URL=http://judge0-server:2358
+      - ALLOW_MOCK_LLM=true
+      - ALLOWED_EMAIL_DOMAINS=${ALLOWED_EMAIL_DOMAINS:-csm.tech}
+    volumes:
+      - backend_uploads:/app/uploads
+    networks:
+      - skillhub-internal
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # 3. Angular Production Frontend (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "4300:80"
+    networks:
+      - skillhub-internal
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:80/"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+
+  # 4. Judge0 Code Execution Subsystem (Sandboxed, Internal Network Only)
+  judge0-server:
+    image: judge0/judge0:1.13.1
+    restart: unless-stopped
+    environment:
+      - POSTGRES_HOST=judge0-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=judge0
+      - POSTGRES_PASSWORD=${JUDGE0_DB_PASSWORD:-judge0_internal_password}
+      - POSTGRES_DB=judge0
+      - REDIS_HOST=judge0-redis
+      - REDIS_PORT=6379
+      - CPU_TIME_LIMIT=2.0
+      - CPU_EXTRA_TIME=1.0
+      - WALL_TIME_LIMIT=5.0
+      - MEMORY_LIMIT=256000
+      - STACK_LIMIT=64000
+      - MAX_PROCESSES_AND_OR_THREADS=30
+      - ENABLE_NETWORK=false # Strictly isolate network during code execution
+      - MAX_FILE_SIZE=4096
+      - NUMBER_OF_RUNS=1
+    networks:
+      - skillhub-internal
+    expose:
+      - "2358" # Internal only - NO published host port
+    depends_on:
+      judge0-db:
+        condition: service_healthy
+      judge0-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2358/system_info"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  judge0-db:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=judge0
+      - POSTGRES_PASSWORD=${JUDGE0_DB_PASSWORD:-judge0_internal_password}
+      - POSTGRES_DB=judge0
+    volumes:
+      - judge0-postgres-data:/var/lib/postgresql/data
+    networks:
+      - skillhub-internal
+    expose:
+      - "5432" # Internal only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U judge0"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  judge0-redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - judge0-redis-data:/data
+    networks:
+      - skillhub-internal
+    expose:
+      - "6379" # Internal only
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  mysql_data:
+  backend_uploads:
+  judge0-postgres-data:
+  judge0-redis-data:

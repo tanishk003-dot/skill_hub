@@ -1,0 +1,35 @@
+/* Global Top Loading Bar */
+.global-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary-light);
+  z-index: 100000;
+  overflow: hidden;
+}
+
+.loading-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--csm-primary) 0%, var(--csm-accent) 50%, var(--primary-hover) 100%);
+  animation: globalBarIndeterminate 1.4s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+@keyframes globalBarIndeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}

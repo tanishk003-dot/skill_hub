@@ -1,0 +1,292 @@
+[
+  {
+    "file": "tests/test_phase7_coding_splash.py",
+    "test": "tests/test_phase7_coding_splash.py::test_coding_run_and_submit_ownership_and_deadline",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase7_coding_splash.py",
+    "test": "tests/test_phase7_coding_splash.py::test_coding_run_db_rate_limiting",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase7_coding_splash.py",
+    "test": "tests/test_phase7_coding_splash.py::test_plagiarism_detection_and_isolation",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase8_ai_class_summary.py",
+    "test": "app.main:main.py:147 Unhandled server exception [Error ID: 4cf1ef4e-1e0d-4c1a-86e3-175dc167f8f6]: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase8_ai_class_summary.py",
+    "test": "tests/test_phase8_ai_class_summary.py::test_transcript_retention_and_manual_deletion",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase8_ai_class_summary.py",
+    "test": "tests/test_phase8_ai_class_summary.py::test_assessment_generation_review_workflow_and_immutability",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase9_wow_pack.py",
+    "test": "tests/test_phase9_wow_pack.py::test_readiness_calculation_and_legal_disclaimer",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase9_wow_pack.py",
+    "test": "tests/test_phase9_wow_pack.py::test_reassessment_randomization_and_growth_analytics",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_consent_and_handshake_required_for_exam_start",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_camera_modes_advisory_and_off",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_mentor_camera_override_flow",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_reasonable_accommodations_camera_exemption",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_reasonable_accommodations_extra_time_scaling",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_heartbeat_and_camera_violation_events",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase10_webcam_accommodations.py",
+    "test": "tests/test_phase10_webcam_accommodations.py::test_snapshot_encryption_and_retention_purge",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "tests/test_phase11_analytics_1on1_export_matching.py::test_item_analysis_math_and_thresholds",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "tests/test_phase11_analytics_1on1_export_matching.py::test_one_on_one_mentor_notes_and_privacy_isolation",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "tests/test_phase11_analytics_1on1_export_matching.py::test_export_formula_injection_and_role_scoping",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "tests/test_phase11_analytics_1on1_export_matching.py::test_reporting_api_token_power_bi_integration",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase11_analytics_1on1_export_matching.py",
+    "test": "tests/test_phase11_analytics_1on1_export_matching.py::test_skill_to_project_matching_and_scoping",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_buddy_volunteer_eligibility_and_toggle",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_buddy_pairing_rules_and_concurrency_cap",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_buddy_view_privacy_isolation",
+    "error": "..."
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_buddy_milestone_and_weekly_xp_cap",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_forum_cohort_isolation_and_scoping",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_active_assessment_forum_block_and_attempt_in_progress",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_question_quoting_leak_held_for_review",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_anonymous_fields_peer_masking_vs_mentor_audit_log",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_pii_filter_warning_and_audit_no_raw_pii_stored",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_report_uniqueness_and_moderation",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_ai_draft_answer_generation_and_untrusted_delimiters",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase12_buddy_forum.py",
+    "test": "tests/test_phase12_buddy_forum.py::test_forum_data_isolation_from_chat_scores_and_exports",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "seed_phase7:seed_phase7.py:282 Error seeding phase 7: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "app.seed:seed.py:757 Error seeding database: (pymysql.err.DataError) (1265, \"Data truncated for column 'type' at row 1\")",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "tests/test_phase13_microsoft_integration.py::test_sso_valid_token_handshake",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "tests/test_phase13_microsoft_integration.py::test_sso_state_replay_rejected",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "tests/test_phase13_microsoft_integration.py::test_sso_unmapped_user_and_auto_provision_toggle",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "tests/test_phase13_microsoft_integration.py::test_local_login_toggle_guard",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase13_microsoft_integration.py",
+    "test": "tests/test_phase13_microsoft_integration.py::test_attendance_preview_and_confirm_permissions",
+    "error": "Unknown error"
+  },
+  {
+    "file": "tests/test_phase14_final_polish.py",
+    "test": "tests/test_phase14_final_polish.py::test_login_lockout_and_exponential_backoff",
+    "error": "Unknown error"
+  }
+]

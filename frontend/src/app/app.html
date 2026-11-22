@@ -1,0 +1,10 @@
+<!-- Global HTTP Top Loading Bar with 150ms debounce to prevent flicker -->
+<div *ngIf="loadingService.isLoading$ | async" class="global-loading-bar" role="progressbar" aria-label="Loading content">
+  <div class="loading-slider"></div>
+</div>
+
+<!-- Daily Motivation Splash Overlay -->
+<app-motivation-splash></app-motivation-splash>
+
+<!-- Main Router Content -->
+<router-outlet></router-outlet>

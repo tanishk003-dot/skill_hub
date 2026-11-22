@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  <rect width="48" height="48" x="8" y="8" rx="10" fill="var(--csm-primary, #0A3977)" />
+  <path d="M22 22 L42 22 L42 28 L28 28 L28 34 L38 34 L38 40 L28 40 L28 46 L22 46 Z" fill="var(--csm-accent, #0284C7)" />
+  <circle cx="38" cy="25" r="3" fill="#ffffff" />
+  <text x="68" y="34" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="20" fill="var(--csm-primary, #0A3977)" letter-spacing="-0.5">CSM TECH</text>
+  <text x="68" y="48" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="500" font-size="12" fill="var(--csm-accent, #0284C7)" letter-spacing="1.5">L&amp;K SKILL HUB</text>
+</svg>

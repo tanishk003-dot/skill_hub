@@ -1,0 +1,11 @@
+wheels/
+backend/wheels/
+node_modules/
+dist/
+.angular/
+venv/
+*.db
+.pytest_cache/
+__pycache__/
+*.pyc
+.env
